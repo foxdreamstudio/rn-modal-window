@@ -8,13 +8,20 @@
 
 import * as React from 'react';
 import { StyleSheet, View, Text , Modal, ScrollView} from 'react-native';
-import { modularScale, modularHeight } from 'helpers/SizeManagement';
+import { modularScale, modularHeight } from './SizeManagement';
+
 
 class ModalWindow extends React.Component {
   constructor( props ){
     super( props );
     this.state = {
       isOpen: false
+    }
+  }
+
+  componentDidMount = () => {
+    if( this.props.isShow ){
+      this.setState({ isOpen: true });
     }
   }
 
@@ -56,7 +63,8 @@ class ModalWindow extends React.Component {
 ModalWindow.defaultProps = {
   actionRender: undefined,
   width: '90%',
-  height: modularHeight(.6)
+  height: modularHeight(.6),
+  isShow: false,
 }
 export { ModalWindow };
 
