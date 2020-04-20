@@ -1,25 +1,19 @@
 {
-  "name": "lazyfox-circular-countdown",
-  "version": "1.0.3",
-  "description": "lazyfox-circular-countdown is responsive countdown circle component for react-native. this component using react-native-svg inspire by my last project.",
+  "name": "rn-modal-window",
+  "version": "1.0.0",
+  "description": "this is a modal window for react-nativ apps inspire by my last project.",
   "main": "index.js",
   "scripts": {
     "test": "react-native run-android"
   },
-  "dependencies": {
-    "react-native-svg": "^9.3.6"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/foxdreamstudio/lazyfox-circular-countdown.git"
+    "url": "git+https://github.com/foxdreamstudio/rn-modal-window.git"
   },
   "keywords": [
-    "lazyfox-circular-countdown",
-    "lazyfox circular countdown",
-    "circular countdown",
-    "circular-countdown",
-    "react-native-lazyfox-circular-countdown",
-    "react native lazyfox circular countdown",
+    "rn-modal-window",
+    "modal-window",
+    "react-nativ modal-window",
     "react-native",
     "react-component",
     "react-native-component",
@@ -32,15 +26,15 @@
     "ui",
     "lazyfox",
     "foxdream",
-    "countdown",
-    "circular"
+    "modal",
+    "window"
   ],
   "author": "Ridwan Foxdream",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/foxdreamstudio/lazyfox-circular-countdown/issues"
+    "url": "https://github.com/foxdreamstudio/rn-modal-window/issues"
   },
-  "homepage": "https://github.com/foxdreamstudio/lazyfox-circular-countdown#readme",
+  "homepage": "https://github.com/foxdreamstudio/rn-modal-window#readme",
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.53.1"
   },
