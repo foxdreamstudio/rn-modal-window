@@ -36,7 +36,7 @@ class ModalWindow extends React.Component {
   render(){
     const { state, props } = this;
     return (
-      <Modal visible={ state.isOpen } animationType = {"fade"}  transparent = {true} onRequestClose = { this.dismiss } style={CSS.modal} >
+      <Modal visible={ state.isOpen } animationType = {"fade"}  transparent = {true} onRequestClose = { this.dismiss } style={CSS.modal} onDismiss = { props.onDismiss } >
         <View style = {CSS.modal_wrapper}>
           <Text style = {CSS.txt_wrapper_close} onPress = { this.dismiss } />
           <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
@@ -65,6 +65,7 @@ ModalWindow.defaultProps = {
   width: '90%',
   height: modularHeight(.6),
   isShow: false,
+  onDismiss: () => null
 }
 export { ModalWindow };
 
