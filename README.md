@@ -1,7 +1,7 @@
 # rn-modal-window
 
-[![version](https://img.shields.io/npm/v/lazyfox-circular-countdown.svg)](https://www.npmjs.com/package/rn-modal-window)
-[![downloads](https://img.shields.io/npm/dy/lazyfox-circular-countdown.svg)](https://www.npmjs.com/package/rn-modal-window)
+[![version](https://img.shields.io/npm/v/rn-modal-window.svg)](https://www.npmjs.com/package/rn-modal-window)
+[![downloads](https://img.shields.io/npm/dy/rn-modal-window.svg)](https://www.npmjs.com/package/rn-modal-window)
 
 ## Prerequisites
 
