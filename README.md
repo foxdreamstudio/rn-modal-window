@@ -60,9 +60,9 @@ ModalWindow.defaultProps = {
   height: modularHeight(.6),
   isShow: false,
   onDismiss: () => null, // only ios
-  headStyle: {},
+  headerStyle: {},
   headerBtn: () => null,
-  title: null
+  headerTitleStyle: {}
 }
 
 ```

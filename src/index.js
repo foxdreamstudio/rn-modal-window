@@ -35,14 +35,15 @@ class ModalWindow extends React.Component {
 
   render(){
     const { state, props } = this;
-    const headerStyle = [props.headStyle[0] ?  props.headStyle : [].push(props.headStyle) ]
+    const headerStyle = [props.headerStyle[0] ?  props.headerStyle : [].push(props.headerStyle) ];
+    const headerTitleStyle = [props.headerTitleStyle[0] ?  props.headerTitleStyle : [].push(props.headerTitleStyle) ];
     return (
       <Modal visible={ state.isOpen } animationType = {"fade"}  transparent = {true} onRequestClose = { this.dismiss } style={CSS.modal} onDismiss = { props.onDismiss } >
         <View style = {CSS.modal_wrapper}>
           <Text style = {CSS.txt_wrapper_close} onPress = { this.dismiss } />
           <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
             <View style = {[CSS.header_wrapper, ...headerStyle ]}>
-              <Text style = {CSS.head_title}>{ props.title }</Text>
+              <Text style = {[CSS.head_title, ...headerTitleStyle]}>{ props.title }</Text>
               { props.headerBtn() }
             </View>
             <View style = {[ CSS.content_list, {height: props.height } ]}>
@@ -68,8 +69,9 @@ ModalWindow.defaultProps = {
   height: modularHeight(.6),
   isShow: false,
   onDismiss: () => null, // only ios
-  headStyle: {},
-  headerBtn: () => null
+  headerStyle: {},
+  headerBtn: () => null,
+  headerTitleStyle: {}
 }
 export { ModalWindow };
 
