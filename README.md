@@ -1,5 +1,8 @@
 # rn-modal-window
 
+[![version](https://img.shields.io/npm/v/lazyfox-circular-countdown.svg)](https://www.npmjs.com/package/rn-modal-window)
+[![downloads](https://img.shields.io/npm/dy/lazyfox-circular-countdown.svg)](https://www.npmjs.com/package/rn-modal-window)
+
 ## Prerequisites
 
 This library is pure react-native component, so just have fun on it
