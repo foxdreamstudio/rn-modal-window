@@ -43,7 +43,7 @@ class ModalWindow extends React.Component {
           <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
             <View style = {[CSS.header_wrapper, ...headerStyle ]}>
               <Text style = {CSS.head_title}>{ props.title }</Text>
-              { props.headerBtn }
+              { props.headerBtn() }
             </View>
             <View style = {[ CSS.content_list, {height: props.height } ]}>
               <ScrollView contentContainerStyle = {{flexGrow: 1}} >
