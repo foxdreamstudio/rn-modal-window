@@ -1,6 +1,6 @@
 /**
  * rn-modal-window
- * https://github.com/Ridwan_Foxdream/react-native/LazyFox-Circular-Countdown
+ * https://github.com/Ridwan_Foxdream/react-native/rn-modal-window
  *
  * @format
  * @flow
@@ -35,13 +35,15 @@ class ModalWindow extends React.Component {
 
   render(){
     const { state, props } = this;
+    const headerStyle = [props.headStyle[0] ?  props.headStyle : [].push(props.headStyle) ]
     return (
       <Modal visible={ state.isOpen } animationType = {"fade"}  transparent = {true} onRequestClose = { this.dismiss } style={CSS.modal} onDismiss = { props.onDismiss } >
         <View style = {CSS.modal_wrapper}>
           <Text style = {CSS.txt_wrapper_close} onPress = { this.dismiss } />
           <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
-            <View style = {CSS.header_wrapper}>
+            <View style = {[CSS.header_wrapper, ...headerStyle ]}>
               <Text style = {CSS.head_title}>{ props.title }</Text>
+              { props.headerBtn }
             </View>
             <View style = {[ CSS.content_list, {height: props.height } ]}>
               <ScrollView contentContainerStyle = {{flexGrow: 1}} >
@@ -65,7 +67,9 @@ ModalWindow.defaultProps = {
   width: '90%',
   height: modularHeight(.6),
   isShow: false,
-  onDismiss: () => null
+  onDismiss: () => null, // only ios
+  headStyle: {},
+  headerBtn: () => null
 }
 export { ModalWindow };
 

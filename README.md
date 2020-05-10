@@ -35,10 +35,31 @@ export default class App extends Component<Props> {
           <Text>Close</Text>
         </TouchableOpacity>
       )} width = {"90%"} >
-        <Text></Text>
+        <Text>example modal</Text>
       </ModalWindow>
     );
   }
+}
+
+```
+
+
+## defaultProps
+
+So you can add many properties, you can look at the list of defaultprops / properties
+
+```jsx
+// Propeties 
+
+ModalWindow.defaultProps = {
+  actionRender: undefined,
+  width: '90%',
+  height: modularHeight(.6),
+  isShow: false,
+  onDismiss: () => null, // only ios
+  headStyle: {},
+  headerBtn: () => null,
+  title: null
 }
 
 ```
