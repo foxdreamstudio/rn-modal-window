@@ -44,11 +44,15 @@ class ModalWindow extends React.Component {
           <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
             <View style = {[CSS.header_wrapper, ...headerStyle ]}>
               <Text style = {[CSS.head_title, ...headerTitleStyle]}>{ props.title }</Text>
-              { props.headerBtn() }
+              { props.headerBtn({dismiss: this.dismiss, show: this.show}) }
             </View>
             <View style = {[ CSS.content_list, {height: props.height } ]}>
               <ScrollView contentContainerStyle = {{flexGrow: 1}} >
-                { props.children }
+                { props.children?.map((screen, index) =>{
+                  return React.cloneElement(screen, {
+                    dismiss: this.dismiss, show: this.show
+                  })
+                }) }
               </ScrollView>
             </View>
             { props.actionRender &&
