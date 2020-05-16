@@ -53,7 +53,7 @@ class ModalWindow extends React.Component {
             </View>
             { props.actionRender &&
               <View style = {[CSS.action_btn_wrapper, CSS.bt]}>
-                { props.actionRender() }
+                { props.actionRender({dismiss: this.dismiss, show: this.show}) }
               </View>
             }
           </View>
