@@ -49,9 +49,13 @@ class ModalWindow extends React.Component {
             <View style = {[ CSS.content_list, {height: props.height } ]}>
               <ScrollView contentContainerStyle = {{flexGrow: 1}} >
                 { props.children?.map((screen, index) =>{
-                  return React.cloneElement(screen, {
-                    dismiss: this.dismiss, show: this.show
-                  })
+                  return(
+                    <>
+                      {React.cloneElement(screen, {
+                        dismiss: this.dismiss, show: this.show
+                      })}
+                    </>
+                  ) 
                 }) }
               </ScrollView>
             </View>
@@ -111,7 +115,7 @@ const CSS = StyleSheet.create({
     paddingHorizontal: modularScale(10),
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   head_title:{
     color: '#fff', flex: 1, textAlign: 'center', fontSize: modularScale(14), fontWeight: '700'
