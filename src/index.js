@@ -48,15 +48,19 @@ class ModalWindow extends React.Component {
             </View>
             <View style = {[ CSS.content_list, {height: props.height } ]}>
               <ScrollView contentContainerStyle = {{flexGrow: 1}} >
-                { props.children?.map((screen, index) =>{
-                  return(
-                    <>
-                      {React.cloneElement(screen, {
-                        dismiss: this.dismiss, show: this.show
-                      })}
-                    </>
-                  ) 
-                }) }
+                { props.children &&
+                  props.children.length > 0 ?  
+                  props.children?.map((screen, index) =>{
+                    return(
+                      <>
+                        {React.cloneElement(screen, {
+                          dismiss: this.dismiss, show: this.show
+                        })}
+                      </>
+                    )  
+                  }) :
+                  props.children
+                }
               </ScrollView>
             </View>
             { props.actionRender &&
