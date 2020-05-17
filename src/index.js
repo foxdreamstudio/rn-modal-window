@@ -39,37 +39,39 @@ class ModalWindow extends React.Component {
     const headerTitleStyle = [props.headerTitleStyle[0] ?  props.headerTitleStyle : [].push(props.headerTitleStyle) ];
     return (
       <Modal visible={ state.isOpen } animationType = {"fade"}  transparent = {true} onRequestClose = { this.dismiss } style={CSS.modal} onDismiss = { props.onDismiss } >
-        <View style = {CSS.modal_wrapper}>
-          <Text style = {CSS.txt_wrapper_close} onPress = { this.dismiss } />
-          <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
-            <View style = {[CSS.header_wrapper, ...headerStyle ]}>
-              <Text style = {[CSS.head_title, ...headerTitleStyle]}>{ props.title }</Text>
-              { props.headerBtn({dismiss: this.dismiss, show: this.show}) }
-            </View>
-            <View style = {[ CSS.content_list, {height: props.height } ]}>
-              <ScrollView contentContainerStyle = {{flexGrow: 1}} >
-                { props.children &&
-                  props.children.length > 0 ?  
-                  props.children?.map((screen, index) =>{
-                    return(
-                      <>
-                        {React.cloneElement(screen, {
-                          dismiss: this.dismiss, show: this.show
-                        })}
-                      </>
-                    )  
-                  }) :
-                  props.children
-                }
-              </ScrollView>
-            </View>
-            { props.actionRender &&
-              <View style = {[CSS.action_btn_wrapper, CSS.bt]}>
-                { props.actionRender({dismiss: this.dismiss, show: this.show}) }
+        { state.isOpen &&
+          <View style = {CSS.modal_wrapper}>
+            <Text style = {CSS.txt_wrapper_close} onPress = { this.dismiss } />
+            <View style = {[ CSS.box_wrapper, {width: props.width } ]}>
+              <View style = {[CSS.header_wrapper, ...headerStyle ]}>
+                <Text style = {[CSS.head_title, ...headerTitleStyle]}>{ props.title }</Text>
+                { props.headerBtn({dismiss: this.dismiss, show: this.show}) }
               </View>
-            }
+              <View style = {[ CSS.content_list, {height: props.height } ]}>
+                <ScrollView contentContainerStyle = {{flexGrow: 1}} >
+                  { props.children &&
+                    props.children.length > 0 ?  
+                    props.children?.map((screen, index) =>{
+                      return(
+                        <>
+                          {React.cloneElement(screen, {
+                            dismiss: this.dismiss, show: this.show
+                          })}
+                        </>
+                      )  
+                    }) :
+                    props.children
+                  }
+                </ScrollView>
+              </View>
+              { props.actionRender &&
+                <View style = {[CSS.action_btn_wrapper, CSS.bt]}>
+                  { props.actionRender({dismiss: this.dismiss, show: this.show}) }
+                </View>
+              }
+            </View>
           </View>
-        </View>
+        }
       </Modal>
     );
   }
